@@ -1,0 +1,14 @@
+@import "../styleutils/mixins/buttonStyles";
+
+.main-page {
+  margin: 1rem;
+
+  &__bttn {
+    @include nav-button;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 800;
+  }
+}
