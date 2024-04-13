@@ -5,10 +5,19 @@
 
   &__bttn {
     @include nav-button;
+    margin-top: 16px;
   }
 
   &__title {
     font-size: 26px;
     font-weight: 800;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: auto;
+    box-sizing: border-box;
   }
 }

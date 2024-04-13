@@ -1,8 +1,4 @@
-export const BackIcon = ({
-  color
-}: {
-  color: string
-}) => {
+export const BackIcon = ({ color }: { color: string }) => {
   return (
     <svg
       width="20"

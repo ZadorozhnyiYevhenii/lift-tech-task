@@ -1,3 +1,5 @@
+"use client";
+
 import "./UiButton.scss";
 
 export const UIButton = ({
@@ -11,7 +13,7 @@ export const UIButton = ({
 }) => {
   return (
     <button
-      className={`ui-button ${disabled ? "ui-button--disabled" : null}`}
+      className={`ui-button ${disabled ? "ui-button--disabled" : ""}`}
       onClick={onBtnClick}
       disabled={disabled}
     >

@@ -1,0 +1,46 @@
+@import "../../styleutils/variables";
+
+$border-color: $main-background;
+
+.ui-option {
+  border: 1px solid $light-border;
+  border-radius: 8px;
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+  &--selected {
+    border: 2px solid $border-color;
+  }
+
+  &__checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid $main-dark-color;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &--checked {
+      background: $border-color;
+      border: none;
+
+      background-image: url(../../assets/checked-icon.png);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-size: 12px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    color: $main-dark-color;
+  }
+}
