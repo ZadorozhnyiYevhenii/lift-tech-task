@@ -1,0 +1,40 @@
+@import "../../styleutils/variables";
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__bar {
+    width: 90%;
+    height: 4px;
+    position: relative;
+    background: $white-color;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $brand-color;
+  }
+
+  &__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $brand-color;
+  }
+}

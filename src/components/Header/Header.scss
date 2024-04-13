@@ -1,0 +1,27 @@
+.header {
+  position: relative;
+
+  &__background {
+    background-image: url(../../assets/header-background.png);
+    height: 79px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 60%;
+    background-size: cover;
+
+    position: absolute;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1rem;
+    padding-top: 1rem;
+  }
+
+  &__menu {
+    position: relative;
+    z-index: 2;
+  }
+}
