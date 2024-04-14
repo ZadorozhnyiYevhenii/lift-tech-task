@@ -1,20 +1,21 @@
-'use client'
-
 import { IOption } from "@/types/IOption";
+import cn from "classnames";
 import "./UIOption.scss";
 
 export const UIOption = ({
   option,
   onOptionClick,
-  isSelected,
+  selectedOption,
 }: {
   option: IOption;
   onOptionClick: (id: number) => void;
-  isSelected: boolean;
+  selectedOption: number;
 }) => {
   return (
     <label
-      className={`ui-option ${isSelected ? "ui-option--selected" : ''}`}
+      className={cn("ui-option", {
+        "ui-option--selected": selectedOption === option.id,
+      })}
       onClick={() => onOptionClick(option.id)}
     >
       <div className="ui-option__content">
@@ -22,9 +23,9 @@ export const UIOption = ({
         <span className="ui-option__title">{option.title}</span>
       </div>
       <div
-        className={`ui-option__checkbox ${
-          isSelected ? "ui-option__checkbox--checked" : ''
-        }`}
+        className={cn("ui-option__checkbox", {
+          "ui-option__checkbox--checked": selectedOption === option.id,
+        })}
       />
     </label>
   );

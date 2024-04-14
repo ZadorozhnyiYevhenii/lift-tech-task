@@ -1,19 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import { UIButton } from "@/components/UIButton/UIButton";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { BtnTitles } from "@/components/UIButton/common/btnTitles";
 import { options } from "@/components/UIOption/common/options";
-import { UIOption } from "@/components/UIOption/UIOption";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+const UIOption = dynamic(
+  () =>
+    import("@/components/UIOption/UIOption").then((module) => module.UIOption),
+  {
+    ssr: false,
+  }
+);
+const UIButton = dynamic(
+  () =>
+    import("@/components/UIButton/UIButton").then((module) => module.UIButton),
+  {
+    ssr: false,
+  }
+);
 import "./page.scss";
 
 export default function Home() {
   const router = useRouter();
-  const [selectedOption, setSelectedOption] = useState<number | null>(
-    typeof window !== "undefined" && localStorage.getItem("genre")
-      ? JSON.parse(localStorage.getItem("genre") as string)
-      : null
+  const [selectedOption, setSelectedOption] = useLocalStorage<number | null>(
+    "genre",
+    null
   );
 
   const handleBttnClick = () => {
@@ -39,7 +51,7 @@ export default function Home() {
             <UIOption
               option={option}
               onOptionClick={handleSelectOption}
-              isSelected={selectedOption === option.id}
+              selectedOption={selectedOption}
             />
           </li>
         ))}
