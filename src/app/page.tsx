@@ -20,22 +20,21 @@ const UIButton = dynamic(
   }
 );
 import "./page.scss";
+import { StorageKeys } from "@/constants/localStorageKeys";
 
 export default function Home() {
   const router = useRouter();
   const [selectedOption, setSelectedOption] = useLocalStorage<number | null>(
-    "genre",
+    StorageKeys.GENRE,
     null
   );
 
   const handleBttnClick = () => {
-    if (selectedOption !== null) {
-      const currentOption = options.find(
-        (option) => option.id === selectedOption
-      );
-      localStorage.setItem("genre", JSON.stringify(currentOption?.id));
-      router.push("/movieform");
-    }
+    const currentOption = options.find(
+      (option) => option.id === selectedOption
+    );
+    localStorage.setItem("genre", JSON.stringify(currentOption?.id));
+    router.push("/movieform");
   };
 
   const handleSelectOption = (id: number) => {

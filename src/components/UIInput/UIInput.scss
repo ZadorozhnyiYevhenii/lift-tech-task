@@ -1,0 +1,36 @@
+@import "../../styleutils/variables";
+
+$focus-border-color: $main-background;
+
+.ui-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 91px;
+
+  &__input {
+    box-sizing: border-box;
+    padding: 24px 20px;
+    height: 64px;
+    outline: none;
+
+    border: 1px solid $light-border;
+    color: $main-dark-color;
+    border-radius: 8px;
+    font-size: 16px;
+
+    &:focus {
+      border: 2px solid $focus-border-color;
+    }
+  }
+
+  &__error {
+    display: none;
+    color: $error-color;
+    font-size: 14px;
+
+    &--active {
+      display: block;
+    }
+  }
+}
