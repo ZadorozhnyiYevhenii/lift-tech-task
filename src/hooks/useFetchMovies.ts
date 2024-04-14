@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export const useFetchMovies = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
-  const [movie, setMovie] = useState<IMovie | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorLoading, setErrorLoading] = useState(false);
 
@@ -21,11 +20,9 @@ export const useFetchMovies = () => {
 
         if (data.Response === "False") {
           setErrorLoading(true);
+        } else {
+          setMovies(data.Search)
         }
-
-        Array.isArray(data)
-          ? setMovies(data)
-          : setMovie(data);
       } catch (error) {
         setErrorLoading(true);
       } finally {
@@ -36,5 +33,5 @@ export const useFetchMovies = () => {
     fetchMovies();
   }, []);
 
-  return { movies, loading, errorLoading, movie };
+  return { movies, loading, errorLoading };
 };

@@ -4,6 +4,7 @@
   position: relative;
   margin-bottom: 30px;
   width: 100%;
+
   @include onTablet {
     display: flex;
     justify-content: center;
@@ -47,6 +48,10 @@
     margin-inline: 1rem;
     padding-top: 1rem;
     max-width: 528px;
+
+    @include onMiddlePhone {
+      margin-inline: 2rem;
+    }
   }
 
   &__menu {

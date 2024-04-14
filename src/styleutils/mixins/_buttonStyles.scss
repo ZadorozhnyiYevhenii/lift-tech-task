@@ -1,11 +1,17 @@
 @import "../../styleutils/mixins/breakPoints";
 
 @mixin nav-button {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   width: 90%;
   right: 5%;
   left: 5%;
+
+  @include onMiddlePhone {
+    width: 82%;
+    right: 10%;
+    left: 10%;
+  }
 
   @include onTablet {
     display: flex;

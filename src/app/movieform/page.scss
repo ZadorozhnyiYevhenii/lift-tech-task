@@ -1,8 +1,14 @@
-@import '../../styleutils/mixins/buttonStyles';
-@import '../../styleutils/mixins/headingStyles';
+@import "../../styleutils/mixins/buttonStyles";
+@import "../../styleutils/mixins/headingStyles";
+@import "../../styleutils/mixins/breakPoints";
 
 .movieForm-page {
   margin-inline: 1rem;
+
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+  }
 
   &__wrapper {
     display: flex;
@@ -10,6 +16,8 @@
     justify-content: center;
     gap: 40px;
     height: 70vh;
+    max-width: 528px;
+    width: 100%;
   }
 
   &__btn {

@@ -9,7 +9,10 @@ export const PercentageBar = () => {
 
   useEffect(() => {
     switch (pathName) {
-      case "/" || "/movieform":
+      case "/":
+        setPercentage(10);
+        break;
+      case "/movieform":
         setPercentage(10);
         break;
       case "/quizSuccess" || "/fail":

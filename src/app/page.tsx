@@ -43,18 +43,20 @@ export default function Home() {
 
   return (
     <main className="main-page">
-      <h1 className="main-page__title">Your favorite movie genre?</h1>
-      <ul className="main-page__list">
-        {options.map((option) => (
-          <li key={option.id} className="main-page__item">
-            <UIOption
-              option={option}
-              onOptionClick={handleSelectOption}
-              selectedOption={selectedOption}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className="main-page__wrapper">
+        <h1 className="main-page__title">Your favorite movie genre?</h1>
+        <ul className="main-page__list">
+          {options.map((option) => (
+            <li key={option.id} className="main-page__item">
+              <UIOption
+                option={option}
+                onOptionClick={handleSelectOption}
+                selectedOption={selectedOption}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="main-page__bttn">
         <UIButton
           btnText={BtnTitles.CONTINUE}

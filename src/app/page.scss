@@ -1,12 +1,35 @@
 @import "../styleutils/mixins/buttonStyles";
-@import '../styleutils/mixins/headingStyles';
+@import "../styleutils/mixins/headingStyles";
+@import "../styleutils/mixins/breakPoints";
 
 .main-page {
   margin: 1rem;
 
+  @include onMiddlePhone {
+    margin: 2rem;
+  }
+
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__bttn {
     @include nav-button;
     margin-top: 16px;
+  }
+
+  &__wrapper {
+    @include onMiddlePhone {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
   }
 
   &__title {
@@ -19,5 +42,8 @@
     gap: 16px;
     overflow: auto;
     box-sizing: border-box;
+    justify-content: center;
+    max-width: 528px;
+    width: 100%;
   }
 }

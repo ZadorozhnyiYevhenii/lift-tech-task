@@ -8,15 +8,15 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header__content">
-      <div className="header__background" />
-      <div className="header__wrap">
-        <BackButton />
-        <button className="header__menu">
-          <PercentageBar />
-          <BurgerIcon />
-        </button>
-      </div>
-      <ProgressBar />
+        <div className="header__background" />
+        <div className="header__wrap">
+          <BackButton />
+          <button className="header__menu">
+            <PercentageBar />
+            <BurgerIcon />
+          </button>
+        </div>
+        <ProgressBar />
       </div>
     </header>
   );

@@ -5,12 +5,13 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { BtnTitles } from "@/components/UIButton/common/btnTitles";
 import { useRouter } from "next/navigation";
 import { StorageKeys } from "@/constants/localStorageKeys";
+import { Loader } from "@/components/Loader/Loader";
+import "./page.scss";
 const UIButton = dynamic(
   () =>
     import("@/components/UIButton/UIButton").then((module) => module.UIButton),
   {
     ssr: false,
-    loading: () => <Loader />
   }
 );
 const UIInput = dynamic(
@@ -20,8 +21,6 @@ const UIInput = dynamic(
     loading: () => <Loader />
   }
 );
-import "./page.scss";
-import { Loader } from "@/components/Loader/Loader";
 
 export default function MovieFormPage() {
   const router = useRouter();
