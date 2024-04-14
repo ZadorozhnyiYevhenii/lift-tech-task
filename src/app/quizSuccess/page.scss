@@ -1,0 +1,7 @@
+@import '../../styleutils/mixins/buttonStyles';
+
+.successPage {
+  &__btn {
+    @include nav-button;
+  }
+}

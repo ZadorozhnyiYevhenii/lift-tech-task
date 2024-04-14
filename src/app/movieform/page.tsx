@@ -10,15 +10,18 @@ const UIButton = dynamic(
     import("@/components/UIButton/UIButton").then((module) => module.UIButton),
   {
     ssr: false,
+    loading: () => <Loader />
   }
 );
 const UIInput = dynamic(
   () => import("@/components/UIInput/UIInput").then((module) => module.UIInput),
   {
     ssr: false,
+    loading: () => <Loader />
   }
 );
 import "./page.scss";
+import { Loader } from "@/components/Loader/Loader";
 
 export default function MovieFormPage() {
   const router = useRouter();

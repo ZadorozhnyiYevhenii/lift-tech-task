@@ -1,6 +1,23 @@
+@import "../../styleutils/mixins/breakPoints";
+
 .header {
   position: relative;
   margin-bottom: 30px;
+  width: 100%;
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 528px;
+    }
+  }
 
   &__background {
     background-image: url(../../assets/header-background.png);
@@ -11,6 +28,16 @@
     background-size: cover;
 
     position: absolute;
+
+    @include onTablet {
+      height: 100px;
+      max-width: 675px;
+      background-size: contain;
+      top: 40px;
+      background-position: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__wrap {
@@ -19,10 +46,19 @@
     align-items: center;
     margin-inline: 1rem;
     padding-top: 1rem;
+    max-width: 528px;
   }
 
   &__menu {
     position: relative;
     z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include onTablet {
+      gap: 24px;
+    }
   }
 }

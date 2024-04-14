@@ -10,7 +10,7 @@ export const UIButton = ({
 }: {
   btnText: string;
   onBtnClick: () => void;
-  disabled: boolean;
+  disabled?: boolean;
 }) => {
 
   return (

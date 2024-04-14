@@ -1,3 +1,9 @@
+@mixin onMiddlePhone {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
 @mixin onLargePhone {
   @media (min-width: 430px) {
     @content;

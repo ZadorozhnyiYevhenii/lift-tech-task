@@ -1,0 +1,42 @@
+@import "../../styleutils/mixins/breakPoints";
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 70vh;
+
+  &__poster {
+    max-width: 100%;
+    height: auto;
+    width: 40%;
+    border-radius: 10px;
+    max-width: 304px;
+
+    @include onMiddlePhone{
+      width: 55%;
+    }
+
+    @include onLargePhone {
+      width: 60%;
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+  }
+}

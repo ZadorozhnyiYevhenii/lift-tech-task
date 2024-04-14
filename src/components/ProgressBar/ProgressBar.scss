@@ -8,6 +8,8 @@
   margin-top: 0.5rem;
   position: relative;
   z-index: 2;
+  max-width: 528px;
+  justify-content: center;
 
   &__wrap {
     display: flex;

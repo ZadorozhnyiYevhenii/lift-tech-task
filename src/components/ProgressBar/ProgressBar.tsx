@@ -16,7 +16,7 @@ export const ProgressBar = () => {
       case "/movieform":
         setPercentage(80);
         break;
-      case "/quizSuccess" && "/fail":
+      case "/quizSuccess" || "/fail":
         setPercentage(100);
         break;
       default:
